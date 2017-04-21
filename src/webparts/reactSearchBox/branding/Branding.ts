@@ -17,7 +17,8 @@ export class Branding implements IBranding {
             this._fixNavigation();
             count += this._hideSearchBoxes();
 
-            if (count === 0 || attempts < timeout) {
+            // should hide 2 search boxes
+            if (count < 2 && attempts < timeout) {
                 // re-schedule the hide action.
                 attempts += 1;
                 window.setTimeout(hideDefaultSearchBox, 50);

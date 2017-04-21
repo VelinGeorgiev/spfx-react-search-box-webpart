@@ -2,7 +2,7 @@ export interface IReactSearchBoxWebPartProps {
   /**
    * The search results page url. 
    * Full url should be to be specified e.g.
-   * https://<your_tenant>.sharepoint.com/search.
+   * https://<your_tenant>.sharepoint.com/search/Pages/results.aspx.
    */
   searchResultsPageUrl: string;
   /**
