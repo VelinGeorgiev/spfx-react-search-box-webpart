@@ -42,10 +42,10 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
 
   protected onInit(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
+
       // hides the default search box web part from modern Site Page.
       this._branding.hideDefaultSearchBox();
       return resolve();
-
     });
   }
 
@@ -79,15 +79,14 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
   }
 
   /** 
-   *  Will get the correct dom element to append the react component.
    *  If enableCustomPlaceHolder property is set to true will attempt to 
-   *  position the component below the custom actions section on the site page.
+   *  position the component below the actions section on the site page.
    *  Otherwise will add the webpart as normally do in the scroll page section.
    */
   private _getDomElement(): HTMLElement {
 
     if (this.properties.enableCustomPlaceHolder) {
-      // render the search component in custom placeholder bellow the custom actions pane.
+      // render the search component in custom placeholder bellow the actions pane.
 
       // verify if search custom placeholder can be created.
       let searchPlaceHolder: HTMLElement = this._branding.getSearchPlaceHolder();
@@ -95,7 +94,6 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
       if (searchPlaceHolder) {
         return searchPlaceHolder;
       }
-
     }
 
     return this.domElement;
@@ -108,7 +106,6 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
 
     if (this.properties.enableCustomPlaceHolder) {
 
-      // cleanup dom between modes.
       if (this.displayMode === DisplayMode.Edit) {
 
         // show "custom mode ON" message if in edit mode.
@@ -118,15 +115,15 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
     } else {
 
       // removes custom search placeholder if added before.
+      // cleanup DOM between modes.
       this._branding.removeSearchPlaceholder();
     }
   }
 
   /**
-   * Shows a message on the webpart actual placeholder in page edit mode
-   * because the webpart is positoned below the custom actions.
-   * This makes the normal webpart display pane empty in
-   * the scroll page section so the message is there as indication that the web part is on the page.
+   * Shows a message on the webpart actual placeholder in edit mode
+   * because the webpart is positoned below the site page actions.
+   * Indicates for page editors that the web part is on the page.
    */
   private _showAlert(): void {
     const alert: React.ReactElement<IAlertProps> = React.createElement(

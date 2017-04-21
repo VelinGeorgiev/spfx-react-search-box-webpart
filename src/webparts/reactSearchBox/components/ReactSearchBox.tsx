@@ -9,7 +9,7 @@ declare const window: any;
 export default class ReactSearchBox extends React.Component<IReactSearchBoxProps, IReactSearchBoxState> {
 
   /**
-   * The search results page uri with the search query included.
+   * Search results page uri.
    */
   public ResultsPageUri: string;
 
@@ -49,14 +49,14 @@ export default class ReactSearchBox extends React.Component<IReactSearchBoxProps
   private _handleSearch(event: any): void {
 
     // if a page is specified in the search page results url property 
-    // then use it instead of the enterprise search url.
+    // then use it instead of the enterprise search results page.
     if (this.props.searchResultsPageUrl) {
 
       this.ResultsPageUri = this.props.searchResultsPageUrl;
 
     } else {
 
-      // defaults to the enterprise search site collection.
+      // defaults to the enterprise search results page.
       this.ResultsPageUri = `${this.props.tenantUrl}/search/Pages/results.aspx`;
     }
 
@@ -67,7 +67,7 @@ export default class ReactSearchBox extends React.Component<IReactSearchBoxProps
 
   /**
    * Redirects to the results page. 
-   * windows.location wrapper so can be better unit tested / faked upon testing.
+   * windows.location wrapper so stub can be created in the unit tests.
    */
   private _redirect(): void {
 

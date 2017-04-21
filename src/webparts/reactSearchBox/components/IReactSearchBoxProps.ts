@@ -1,12 +1,11 @@
 export interface IReactSearchBoxProps {
   /**
-   * The search results page url. 
-   * Full url should be to be specified e.g.
-   * https://<your_tenant>.sharepoint.com/search.
+   * Search results page url.
+   * Full url should be specified e.g. https://<your_tenant>.sharepoint.com/search/Pages/results.aspx.
    */
   searchResultsPageUrl: string;
   /**
-   * The localized webpart strings.
+   * The react search box strings.
    */
   strings: IReactSearchBoxStrings;
   /**

@@ -17,7 +17,7 @@ describe("ReactSearchBox component tests:", () => {
   let componentSearchButtonHandlerSpy: any;
   let tenantUrl: string = "https://contoso.sharepoint.com";
 
-  // define fake data.
+  // define fake webpart strings.
   const fakeStrings: { SearchLabel: string } = { SearchLabel: "fakeSearchLabel" };
 
   // const strings stub
@@ -25,10 +25,10 @@ describe("ReactSearchBox component tests:", () => {
 
 
   before(() => {
-    // fake windows.location and do not redirect when running tests.
+    // stub the _redirect (windows.location) method and do not redirect when running tests.
     sinon.stub(ReactSearchBox.prototype, "_redirect").returns(_ => { return; });
 
-    // spies
+    // method spies
     componentSearchButtonHandlerSpy = sinon.spy(ReactSearchBox.prototype, "_handleSearch");
     componentSearchInputHandlerSpy = sinon.spy(ReactSearchBox.prototype, "_handleInputChange");
 
@@ -76,19 +76,19 @@ describe("ReactSearchBox component tests:", () => {
   });
 
   it("Should call the correct results page uri when no searchResultsPageUrl value", () => {
+
     // change the state.
     const searchQuery: string = "test";
     searchBoxComponent.setState({ searchQuery });
 
-    // click the search button.
     searchBoxComponent.find("#SearchButton").simulate("click");
 
-    // expect correct uri.
     let expectedUri: string = `https://contoso.sharepoint.com/search/Pages/results.aspx?k=${searchQuery}`;
     expect(searchBoxComponent.instance().ResultsPageUri).to.be.equals(expectedUri);
   });
 
   it("Should call the correct results page uri when has searchResultsPageUrl value", () => {
+
     let searchResultsPageUrl: string = "https://contoso.sharepoint.com/sites/sitecollection/search/Pages/results.aspx";
 
     // mount with different properties.
@@ -105,6 +105,7 @@ describe("ReactSearchBox component tests:", () => {
   });
 
   it("Should call uri with KQL query string", () => {
+
     let searchResultsPageUrl: string = "";
 
     // mount with different properties.
@@ -122,6 +123,7 @@ describe("ReactSearchBox component tests:", () => {
 });
 
 describe("Alert react component tests:", () => {
+
   let alertComponent: any;
   let testMessage: string = "Test alert message.";
 

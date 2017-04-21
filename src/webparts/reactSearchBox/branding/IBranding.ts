@@ -1,20 +1,18 @@
 /**
- * Please note: This interface is created to have methods related to
- * SharePoint Site page DOM manipulation. 
- * It is not recommended, but no other options provided by the Office 365 teams atm.
- * This may break the webpart if the Office 365 changes the Site Page DOM.
+ * This interface has methods related to SharePoint Site page DOM manipulation.
+ * Modifing Site Page DOM is not recommended, but no other options provided by the Office 365 teams atm.
  */
 export interface IBranding {
     /**
-     * Hides the default search box from modern SharePoint Site Page.
+     * Hides the OOTB search box from modern SharePoint Site Page.
      */
     hideDefaultSearchBox(): void;
     /**
-     * Gets the html element placeholder where the webpart will be positioned on the site page.
+     * Gets html search placeholder so it can append the webpart.
      */
     getSearchPlaceHolder(): HTMLElement;
     /**
-     * Removes custom search div element placeholder.
+     * Removes custom search placeholder.
      */
     removeSearchPlaceholder(): void;
 }

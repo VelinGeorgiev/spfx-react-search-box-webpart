@@ -14,7 +14,7 @@
     "description": { "default": "React Search Box" },
     "officeFabricIconFontName": "Search",
     "properties": {
-      "description": "ReactSearchBox"
+      "description": "React Search Box"
     }
   }]
 }
