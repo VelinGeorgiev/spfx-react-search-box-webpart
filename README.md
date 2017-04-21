@@ -63,6 +63,7 @@ Version|Date|Comments
 - Clone this repository.
 - Open the command line, navigate to the web part folder and execute:
     - `npm i`
+    - `gulp test` (optional)
     - `gulp serve --nobrowser`
 - Navigate to the hosted version of the SharePoint workbench (`https://<your_tenant>.sharepoint.com/sites/<your_site>/_layouts/15/workbench.aspx`).
 - Add the **SPFx React Search Box** web part.
@@ -75,5 +76,6 @@ This Web Part illustrates the following concepts on top of the SharePoint Framew
 - Using Office UI Fabric React styles for building user experience consistent with SharePoint and Office.
 - Passing web part properties to React components.
 - Passing localized strings to React components.
+- Unit tests including spies, mocks and faking class methods and properties with stubs.
 
 ![](https://telemetry.sharepointpnp.com/sp-dev-fx-webparts/samples/yammer-rest-api)
