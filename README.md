@@ -17,11 +17,11 @@ The business need is:
 - Modern site page to be used as Home page.
 - The search box from the modern page should show specific search results i.e. custom search results scope should be configured.
 
-This is why I created simple SPFx search box client side web part to redirect from modern Site Page to classic search results page url where more precise seacrh result scopes configuration can be made.
+This is why I created simple SPFx search box client side web part to redirect from modern Site Page to classic search results page url where more precise search result scopes configuration can be made.
 
 ![SPFx custom search box web part](./assets/spfx-custom-search-box-webpart.PNG)
 
-I have added another custom property so the web part can appear just below the custom actions pane for better user experience. This option is not recommended for production because uses page DOM manipulation and if the Office 365 team change this DOM elements on the page then it may break the webpart visibility.
+I have added another custom property so the web part can appear just below the actions pane for better user experience. This option is not recommended for production because uses page DOM manipulation and if the Office 365 team change this DOM elements on the page then it may break the webpart visibility.
 
 ![SPFx custom search box placeholder](./assets/spfx-custom-search-box-webpart-custom-placeholder.gif)
 
