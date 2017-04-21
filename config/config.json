@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/reactSearchBox/ReactSearchBoxWebPart.js",
+      "manifest": "./src/webparts/reactSearchBox/ReactSearchBoxWebPart.manifest.json",
+      "outputPath": "./dist/react-search-box.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "reactSearchBoxStrings": "webparts/reactSearchBox/loc/{locale}.js"
+  }
+}
