@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import styles from './ReactSearchBox.module.scss';
 import { IReactSearchBoxProps } from './IReactSearchBoxProps';
 import { IReactSearchBoxState } from './IReactSearchBoxState';
 import { Button } from 'office-ui-fabric-react/lib/Button';
@@ -8,6 +7,20 @@ import { SearchBox } from 'office-ui-fabric-react/lib/SearchBox';
 declare const window: any;
 
 export default class ReactSearchBox extends React.Component<IReactSearchBoxProps, IReactSearchBoxState> {
+
+  /**
+   * The search results page uri with the search query included.
+   */
+  public ResultsPageUri: string;
+
+  constructor(props: IReactSearchBoxProps) {
+    super(props);
+
+    this.state = {
+      searchQuery: ""
+    } as IReactSearchBoxState;
+  }
+
   public render(): React.ReactElement<IReactSearchBoxProps> {
     return (
       <div className="ms-Grid">
@@ -35,17 +48,30 @@ export default class ReactSearchBox extends React.Component<IReactSearchBoxProps
    */
   private _handleSearch(event: any): void {
 
-        // create redirect url to the default enterprise search results page.
-        let uri: string = `${this.props.tenantUrl}/search/Pages/results.aspx`;
+    // if a page is specified in the search page results url property 
+    // then use it instead of the enterprise search url.
+    if (this.props.searchResultsPageUrl) {
 
-        // if a page is specified in the search page results url property 
-        // then use it instead of the enterprise search url.
-        if(this.props.searchResultsPageUrl) {
-            uri = this.props.searchResultsPageUrl;
-        }
+      this.ResultsPageUri = this.props.searchResultsPageUrl;
 
-        // redirect to the results page.
-        window.location = `${uri}?k=${this.state.searchQuery}`;
+    } else {
+
+      // defaults to the enterprise search site collection.
+      this.ResultsPageUri = `${this.props.tenantUrl}/search/Pages/results.aspx`;
+    }
+
+    // append the query string to the url.
+    this.ResultsPageUri += `?k=${this.state.searchQuery}`;
+    this._redirect();
+  }
+
+  /**
+   * Redirects to the results page. 
+   * windows.location wrapper so can be better unit tested / faked upon testing.
+   */
+  private _redirect(): void {
+
+    window.location = this.ResultsPageUri;
   }
 
   /**

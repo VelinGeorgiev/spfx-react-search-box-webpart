@@ -12,7 +12,7 @@
     "group": { "default": "Under Development" },
     "title": { "default": "React Search Box" },
     "description": { "default": "React Search Box" },
-    "officeFabricIconFontName": "Page",
+    "officeFabricIconFontName": "Search",
     "properties": {
       "description": "ReactSearchBox"
     }

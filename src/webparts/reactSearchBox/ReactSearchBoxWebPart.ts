@@ -42,7 +42,6 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
 
   protected onInit(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
-
       // hides the default search box web part from modern Site Page.
       this._branding.hideDefaultSearchBox();
       return resolve();
