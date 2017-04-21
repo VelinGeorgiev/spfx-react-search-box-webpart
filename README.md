@@ -11,7 +11,7 @@ This sample contains a SharePoint Framework React Search Box webpart. The SPFx w
 
 At the current moment (04.17) the default modern Site Page Search Box cannot be configured at all.
 
-![SharePoint modern site page Search Box cannot be configured](./assets/useless-search-from-modern-sharepoint-page.png)
+![SharePoint modern site page Search Box cannot be configured](./assets/useless-search-from-modern-sharepoint-page.PNG)
 
 The business need is:
 - Modern site page to be used as Home page.
@@ -45,7 +45,7 @@ Please note this SPFx web part can be used as temporary solution until the Offic
 
 Solution|Author(s)
 --------|---------
-react-react-search-box | Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
+react-search-box | Velin Georgiev ([@VelinGeorgiev](https://twitter.com/velingeorgiev))
 
 ## Version history
 
