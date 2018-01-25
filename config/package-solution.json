@@ -5,7 +5,7 @@
     "id": "97bcc8de-af77-4cb6-a58b-be6c904984bf",
     "version": "1.0.0.1",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": true
+    "skipFeatureDeployment": false
   },
   "paths": {
     "zippedPackage": "solution/react-search-box.sppkg"
