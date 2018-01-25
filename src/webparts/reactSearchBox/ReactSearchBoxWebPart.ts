@@ -30,7 +30,7 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
       ReactSearchBox,
       {
         searchResultsPageUrl: this.properties.searchResultsPageUrl,
-        strings: strings,
+        customSearchLabel: this.properties.customSearchLabel,
         tenantUrl: Utils.getTenantUrl(this.context.pageContext.site.absoluteUrl, this.context.pageContext.site.serverRelativeUrl)
       }
     );
@@ -41,6 +41,10 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
   }
 
   protected onInit(): Promise<void> {
+    if(!this.properties.customSearchLabel){
+      this.properties.customSearchLabel = strings.SearchLabel;
+    }
+    
     return new Promise<void>((resolve, reject) => {
 
       // hides the default search box web part from modern Site Page.
@@ -69,6 +73,9 @@ export default class ReactSearchBoxWebPart extends BaseClientSideWebPart<IReactS
                 }),
                 PropertyPaneToggle('enableCustomPlaceHolder', {
                   label: strings.EnableCustomSearchPlaceholderLabel
+                }),
+                PropertyPaneTextField('customSearchLabel', {
+                  label: strings.CustomSearchLabel
                 })
               ]
             }

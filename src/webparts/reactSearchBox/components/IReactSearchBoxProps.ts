@@ -5,11 +5,9 @@ export interface IReactSearchBoxProps {
    */
   searchResultsPageUrl: string;
   /**
-   * The react search box strings.
-   */
-  strings: IReactSearchBoxStrings;
-  /**
    * The current tenant url.
    */
   tenantUrl: string;
+
+  customSearchLabel: string;
 }

@@ -8,4 +8,6 @@ export interface IReactSearchBoxWebPartProps {
    * Positions the webpart below the custom actions on modern site page.
    */
   enableCustomPlaceHolder: boolean;
+
+  customSearchLabel: string;
 }

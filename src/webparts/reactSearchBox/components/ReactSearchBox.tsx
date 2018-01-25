@@ -34,7 +34,7 @@ export default class ReactSearchBox extends React.Component<IReactSearchBoxProps
           </div>
           <div className="ms-Grid-col ms-u-sm2">
             <Button id="SearchButton" onClick={this._handleSearch.bind(this)}>
-              {this.props.strings.SearchLabel}
+              {this.props.customSearchLabel}
             </Button>
           </div>
         </div>
