@@ -1,8 +1,10 @@
 {
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
     "name": "react-search-box-client-side-solution",
     "id": "97bcc8de-af77-4cb6-a58b-be6c904984bf",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
   },
   "paths": {
     "zippedPackage": "solution/react-search-box.sppkg"

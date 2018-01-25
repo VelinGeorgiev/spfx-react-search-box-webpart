@@ -4,7 +4,7 @@
 declare const sinon: any;
 
 import * as React from 'react';
-import { expect } from 'chai';
+import { expect, assert } from 'chai';
 import { mount } from 'enzyme';
 
 import ReactSearchBox from '../components/ReactSearchBox';
@@ -65,14 +65,14 @@ describe("ReactSearchBox component tests:", () => {
 
     searchBoxComponent.find("#SearchButton").simulate("click");
 
-    expect(componentSearchButtonHandlerSpy.calledOnce).to.be.true;
+    assert(componentSearchButtonHandlerSpy.calledOnce === true);
   });
 
   it("Should call the input change handler", () => {
 
     searchBoxComponent.find("input").simulate("change");
 
-    expect(componentSearchInputHandlerSpy.called).to.be.true;
+    assert(componentSearchInputHandlerSpy.called === true);
   });
 
   it("Should call the correct results page uri when no searchResultsPageUrl value", () => {

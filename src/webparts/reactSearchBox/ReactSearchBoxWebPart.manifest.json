@@ -1,11 +1,12 @@
 {
-  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
 
   "id": "d7b96ef4-8b20-4340-8f16-285fdb6d6f85",
   "alias": "ReactSearchBoxWebPart",
   "componentType": "WebPart",
   "version": "0.0.1",
   "manifestVersion": 2,
+  "requiresCustomScript": false,
 
   "preconfiguredEntries": [{
     "groupId": "d7b96ef4-8b20-4340-8f16-285fdb6d6f85",

@@ -1,70 +1,41 @@
-// Use Chrome browser to debug SharePoint Framework React webpart with Visual Studio Code on Windows
-// - Install "Debugger for Chrome" extension
-// - Add this configuration to the launch.json
-// - Close all Chrome browser active instances
-// - Start the SPFx nodejs server by executing "gulp serve"
-// - Go to VS Code debug view (top menu -> View -> Debug)
-// - Hit the play (start debugging) button
-// Happy debugging!
-// Full guide here http://blog.velingeorgiev.pro/how-debug-sharepoint-framework-webpart-visual-studio-code
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "SPFx Local",
-            "type": "chrome",
-            "request": "launch",
-            "url": "https://localhost:4321/temp/workbench.html",
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "webpack:///../../../../../*": "${webRoot}/*"
-            },
-            "runtimeArgs": [
-                "--remote-debugging-port=9222"
-            ]
-        },
-        {
-            "name": "SPFx Online Workbench",
-            "type": "chrome",
-            "request": "launch",
-            "url": "https://spfxdemos.sharepoint.com/_layouts/workbench.aspx",
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "webpack:///../../../../../*": "${webRoot}/*"
-            },
-            "runtimeArgs": [
-                "--remote-debugging-port=9222"
-            ]
-        },
-        {
-            "name": "SPFx Online WP Workbench",
-            "type": "chrome",
-            "request": "launch",
-            "url": "https://spfxdemos.sharepoint.com/_layouts/workbench.aspx",
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
-            },
-            "runtimeArgs": [
-                "--remote-debugging-port=9222"
-            ]
-        },
-        {
-            "name": "SPFx Online Page",
-            "type": "chrome",
-            "request": "launch",
-            "url": "https://spfxdemos.sharepoint.com/SitePages/Demo.aspx",
-            "webRoot": "${workspaceRoot}",
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "webpack:///../../../../../*": "${webRoot}/*"
-            },
-            "runtimeArgs": [
-                "--remote-debugging-port=9222"
-            ]
-        }
-    ]
+  /**
+   * Install Chrome Debugger Extension for Visual Studio Code to debug your components with the
+   * Chrome browser: https://aka.ms/spfx-debugger-extensions
+   */
+  "version": "0.2.0",
+  "configurations": [{
+      "name": "Local workbench",
+      "type": "chrome",
+      "request": "launch",
+      "url": "https://localhost:4321/temp/workbench.html",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../../src/*": "${webRoot}/src/*"
+      },
+      "runtimeArgs": [
+        "--remote-debugging-port=9222"
+      ]
+    },
+    {
+      "name": "Hosted workbench",
+      "type": "chrome",
+      "request": "launch",
+      "url": "https://enter-your-SharePoint-site/_layouts/workbench.aspx",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../../src/*": "${webRoot}/src/*"
+      },
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "-incognito"
+      ]
+    }
+  ]
 }
