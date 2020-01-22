@@ -1,5 +1,7 @@
 # SPFx React Search Box webpart #
 
+#### This project is archived and not maintained anymore. This is an old web part folks, the SharePoint Online has changed so much after the publishing of this that it is likely that is will not work anymore. I currently do not have time to maintain it. You can have a look at the [PnP Samples](https://github.com/SharePoint/sp-dev-fx-webparts) and see if you can find similar sample there.
+
 ## Summary
 
 This sample contains a SharePoint Framework React Search Box webpart. The SPFx web part can be configured to point to classic search results page url and hides the OOTB modern page search box.
